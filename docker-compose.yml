@@ -1,0 +1,14 @@
+version: '3'
+services:
+  filesdatanginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    container_name: FilesDataNginx
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      VITE_URI_BASE: ${VITE_URI_BASE}
